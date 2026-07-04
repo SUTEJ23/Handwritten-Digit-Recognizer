@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handwritten Digit Recognizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Handwritten Digit Recognizer</h1>
+            <p class="subtitle">Draw a digit (0–9) on the canvas and click Predict</p>
+        </header>
+
+        <main class="app-grid">
+            <section class="draw-panel">
+                <div class="canvas-wrapper">
+                    <canvas id="drawCanvas" width="280" height="280"></canvas>
+                </div>
+                <div class="controls">
+                    <button id="predictBtn" class="btn btn-primary">Predict</button>
+                    <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                </div>
+            </section>
+
+            <section class="result-panel">
+                <div id="resultCard" class="result-card hidden">
+                    <p class="result-label">Predicted Digit</p>
+                    <div id="predictedDigit" class="predicted-digit">—</div>
+                    <p id="confidence" class="confidence">Confidence: —</p>
+                </div>
+
+                <div id="placeholder" class="placeholder">
+                    <span>Draw a digit and press Predict</span>
+                </div>
+
+                <div class="probabilities">
+                    <h2>All Probabilities</h2>
+                    <div id="probBars" class="prob-bars"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>CNN trained on MNIST · Python · TensorFlow · Flask</p>
+        </footer>
+    </div>
+
+    <canvas id="hiddenCanvas" width="28" height="28" hidden></canvas>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
