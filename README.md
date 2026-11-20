@@ -117,4 +117,4 @@ Edit `src/config.py` to change:
 
 ## Author
 
-Your Name — [GitHub](https://github.com/SUTEJ23)
+SUTEJ RAJ — [GitHub](https://github.com/SUTEJ23)
